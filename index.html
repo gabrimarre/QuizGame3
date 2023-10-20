@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <title>Quiz informatica</title>
+</head>
+
+<style>
+body {
+    background-image: url(../immagini/SfondoProgAsk.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#divH1 {
+    background-color: rgb(82, 152, 129);
+    padding:20px;
+    margin: auto;
+    text-align: center;
+}
+#divH3 {
+    background: linear-gradient(#9fe1bd, #93b162, #33dc55);
+    width: 1200px;
+    height: 100vh;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+}
+</style>
+
+<body>
+    <div id="divH1">
+        <h1>Monkey Quiz a risposta multipla!</h1>
+    </div>
+
+    <div id="divH3">
+        <h3>Benvenuto nel nostro Quiz a risopsta multipla!! </h3>
+
+        <p>
+            il test prevede 10 domande di informatica base, per ogni risposta corretta il 
+            sistema ci assegna 1 punto, per un massimo di 10 punti! <br> 
+            Rispondi alla domanda qui sotto per accedere
+            al nostro questionario!!
+        </p>
+        
+    <div style="border: solid; padding: 10px; background-color: rgb(82, 152, 129);">
+        <label for="nome">Javascript e Java sono la stessa cosa?</label>
+<br>
+        <label for="text">Inserisci la risposta</label>
+        <input type="text" name="risposta" id="risposta" required/>
+<br> <br>
+        <button onclick="accedi()">Accedi al questionario</button> 
+    </div>
+
+    <img src="" alt="">
+
+    <script>
+        function accedi() {
+
+            var risposta = document.getElementById("risposta").value;
+
+            if (risposta === "no") {
+            window.location.href = "./PagineDelQuiz/Questionario.html";
+            } else {
+                alert("Riprova! o inserisci la risposta senza maiuscole");
+            }
+        }
+    </script>
+    </div>
+
+</body>
+</html>

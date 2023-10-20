@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <title>Quiz informatica</title>
+</head>
+
+<style> 
+body {
+    background-image: url(../immagini/SfondoProgAsk.jpg); 
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+#contenitoreQuiz {
+    background: linear-gradient(#9fe1bd, #93b162, #33dc55);
+    width: 600px;
+    padding: 20px;
+    margin: auto;
+}
+#divH1 {
+    background-color: rgb(82, 152, 129);
+    padding:20px;
+    text-align: center;
+}
+label {
+    font-weight: bold;
+    text-decoration: underline;
+}
+</style>
+
+<body>
+    <div id="divH1">
+        <a href="./HomeQuiz.html"><img src="../immagini/clever-monkey-emblem_706143-7926.jpg" alt="logo" 
+            style="width: 100px; "></a>
+        <h1>Questionario</h1>
+    </div>
+
+<!-- Domande e Risposte -->
+<div id="contenitoreQuiz"> 
+    <div id="quiz">
+        <label for="text">1. HTML è un linguaggio di programmazione.</label> <br>
+        <input type="radio" name="q1" value="a"> a) Vero<br>
+        <input type="radio" name="q1" value="b"> b) Falso<br>
+<br>
+
+        <label for="text">2. Cos'è windows 11?</label> <br>
+        <input type="radio" name="q2" value="a"> a) Un sistema di ancoraggio<br>
+        <input type="radio" name="q2" value="b"> b) Un sistema operativo<br>
+        <input type="radio" name="q2" value="c"> c) Un sistema di programmazione<br>
+<br>
+        <label for="text">3. Specifica la funzione del tag br.</label> <br>
+        <input type="radio" name="q3" value="a"> a) Manda a capo un determinato punto della frase<br>
+        <input type="radio" name="q3" value="b"> b) Modifica lo stile del testo<br>
+        <input type="radio" name="q3" value="c"> c) Indica di prendersi una pausa di riflessione<br> <br>
+<br>
+        <label for="text">4.In cosa consiste il tag h6?</label> <br>
+        <input type="radio" name="q4" value="a"> a) Crea un paragrafo in grassetto<br>
+        <input type="radio" name="q4" value="b"> b) Crea un sottotitolo<br>
+        <input type="radio" name="q4" value="c"> c) Non esiste<br>
+<br>
+        <label for="text">5. Cosa ci permette di fare il CSS?</label> <br>
+        <input type="radio" name="q5" value="a"> a) Modificare lo stile solo del nostro header<br>
+        <input type="radio" name="q5" value="b"> b) Modificare lo stile della nostra intera pagina<br>
+        <input type="radio" name="q5" value="c"> c) Creare collegamenti ipertestuali<br> <br>
+<br>
+        <label for="text">6. Cosa si intende con "modificare il padding di un div"?</label> <br>
+        <input type="radio" name="q6" value="a"> a) Modificare i margini esterni<br>
+        <input type="radio" name="q6" value="b"> b) Modificarne gli angoli<br>
+        <input type="radio" name="q6" value="c"> c) Modificare il bordo interno<br>
+<br>
+        <label for="text">7. Cos'è un id?</label> <br>
+        <input type="radio" name="q7" value="a"> a) La nostra carta d'identità<br>
+        <input type="radio" name="q7" value="b"> b) Un identificatore univoco<br>
+        <input type="radio" name="q7" value="c"> c) Un identificatore multifattoriale <br> <br>
+<br>
+        <label for="text">8. Cosa si intende con metodo push?</label> <br>
+        <input type="radio" name="q8" value="a"> a) Spingere chi ti sta antipatico<br>
+        <input type="radio" name="q8" value="b"> b) Preleva un elemento dalla coda dell'array<br>
+        <input type="radio" name="q8" value="c"> c) Aggiunge un elemento in coda all'array<br>
+<br>
+        <label for="text">9. Quale operatore logico ci restituisce vero se entrambe le variabili sono vere?</label> <br>
+        <input type="radio" name="q9" value="a"> a) And<br>
+        <input type="radio" name="q9" value="b"> b) Or<br>
+        <input type="radio" name="q9" value="c"> c) Not<br> 
+<br>
+        <label for="text">10. Per quante volte esegue il blocco di istruzioni la struttura iterrativa "for"?</label> <br>
+        <input type="radio" name="q10" value="a"> a) All'infinito<br>
+        <input type="radio" name="q10" value="b"> b) Lo determiniamo noi<br>
+        <input type="radio" name="q10" value="c"> c) Almeno 3 volte<br>
+<br>
+    </div>
+
+    <button onclick="verificaRisposte()" class="btn btn-dark">Verifica Risposte</button>
+    <p id="punteggio">Il tuo punteggio: <span id="risultato"></span></p>
+
+</div>
+
+<script>
+    window.punteggio = 0;
+
+    function verificaRisposte() {
+
+
+        var rispostaQ1 = document.querySelector('input[name="q1"]:checked').value;
+        var rispostaQ2 = document.querySelector('input[name="q2"]:checked').value;
+        var rispostaQ3 = document.querySelector('input[name="q3"]:checked').value;
+        var rispostaQ4 = document.querySelector('input[name="q4"]:checked').value;
+        var rispostaQ5 = document.querySelector('input[name="q5"]:checked').value;
+        var rispostaQ6 = document.querySelector('input[name="q6"]:checked').value;
+        var rispostaQ7 = document.querySelector('input[name="q7"]:checked').value;
+        var rispostaQ8 = document.querySelector('input[name="q8"]:checked').value;
+        var rispostaQ9 = document.querySelector('input[name="q9"]:checked').value;
+        var rispostaQ10 = document.querySelector('input[name="q10"]:checked').value;
+
+        if (rispostaQ1 && rispostaQ2 && rispostaQ3 && rispostaQ4 && rispostaQ5 && rispostaQ6 && rispostaQ7 && rispostaQ8 && rispostaQ9 && rispostaQ10) {
+
+        if (rispostaQ1 === "b") {
+            window.punteggio++;
+        }
+
+        if (rispostaQ2 === "b") {
+            window.punteggio++;
+        }
+
+        if (rispostaQ3 === "a") {
+            window.punteggio++;
+        }
+
+        if (rispostaQ4 === "b") {
+            window.punteggio++;
+        }
+
+        if (rispostaQ5 === "b") {
+            window.punteggio++;
+        }
+
+        if (rispostaQ6 === "c") {
+            window.punteggio++;
+        }
+
+        if (rispostaQ7 === "b") {
+            window.punteggio++;
+        }
+
+        if (rispostaQ8 === "c") {
+            window.punteggio++;
+        }
+
+        if (rispostaQ9 === "a") {
+            window.punteggio++;
+        }
+
+        if (rispostaQ10 === "b") {
+            window.punteggio++;
+        }
+            document.getElementById("risultato").innerHTML = window.punteggio;
+
+        } 
+        
+        else {
+            alert("Rispondi a tutte le domande prima di verificare il punteggio.");
+        } //percher non funziona alrt!!
+    }
+        
+</script>
+
+</body>
+
+</html>
+
